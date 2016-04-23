@@ -6,6 +6,8 @@ Rails.application.routes.draw do
       post 'inbound'
     end
   end
+  
+  get '/info', to: 'application#info', as: 'info'
     
   root to: 'messages#index'
 end
