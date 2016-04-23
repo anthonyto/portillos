@@ -1,23 +1,25 @@
 class MessagesController < ApplicationController
-  before_action :parse_message_params, only: :receive
   
   def index
     @messages = Message.all
   end
   
   def new
+    @message = Message.new
   end
   
   def outbound
+    Message.outbound(message_params[:to])
+    render :index
   end
   
   def inbound
-    @message = Message.create(from: params[:from], body: params[:body])
+    @message = Message.create(from: params[:from], to: '+18582390241', body: params[:body])
   end
   
   private
   
-  def parse_message_params
-    binding.pry
+  def message_params
+    params.require(:message).permit(:to)
   end
 end

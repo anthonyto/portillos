@@ -1,1 +1,4 @@
-message form
+<%= form_for @message, url: { action: "outbound" } do |f| %>
+  <%= f.text_field :to %>
+  <%= f.submit "Portillos" %>
+<% end %>

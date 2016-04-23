@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   
   resources :messages, only: [:index, :new] do
     collection do 
-      get 'outbound'
+      post 'outbound'
       post 'inbound'
     end
   end
