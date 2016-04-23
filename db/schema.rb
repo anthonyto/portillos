@@ -11,13 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160423064954) do
+ActiveRecord::Schema.define(version: 20160423214504) do
 
   create_table "messages", force: :cascade do |t|
-    t.string "from",      limit: 255
-    t.string "body",      limit: 255
-    t.string "to",        limit: 255
-    t.string "media_url", limit: 255
+    t.string "from_number", limit: 255
+    t.string "body",        limit: 255
+    t.string "to_number",   limit: 255
+    t.string "media_url",   limit: 255
   end
 
 end

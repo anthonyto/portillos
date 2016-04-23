@@ -1,3 +1,4 @@
+<% sizes = [1,2,3] %>
 <% @messages.each do |message| %>
-tour
+  <h<%= sizes.sample %>><%= message.body %></h<%= sizes.sample %>>
 <% end %>

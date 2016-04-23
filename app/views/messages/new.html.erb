@@ -1,4 +1,5 @@
+<p>Enter a phone number with full country and area code. Like this: +18582042251</p>
 <%= form_for @message, url: { action: "outbound" } do |f| %>
-  <%= f.text_field :to %>
+  <%= f.text_field :to_number %>
   <%= f.submit "Portillos" %>
 <% end %>

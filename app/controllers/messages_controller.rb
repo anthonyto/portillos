@@ -3,7 +3,7 @@ class MessagesController < ApplicationController
   skip_before_action :verify_authenticity_token, only: [:inbound]
   
   def index
-    @messages = Message.all
+    @messages = Message.from_other_numbers
   end
   
   def new
@@ -11,15 +11,19 @@ class MessagesController < ApplicationController
   end
   
   def outbound
-    Message.outbound(message_params[:to])
-    flash[:notice] = "Sent"
+    begin
+      Message.outbound(message_params[:to_number])
+      flash[:notice] = "Sent"
+    rescue Exception => e
+      flash[:notice] = "#{e}"
+    end
     redirect_to messages_path
   end
   
   def inbound
     Message.create(
-      from: inbound_message_params[:From],
-      to: '+18582390241',
+      from_number: inbound_message_params[:From],
+      to_number: '+18582390241',
       body: inbound_message_params[:Body]
     )
     render nothing: true
@@ -28,7 +32,7 @@ class MessagesController < ApplicationController
   private
   
   def message_params
-    params.require(:message).permit(:to)
+    params.require(:message).permit(:to_number)
   end
   
   def inbound_message_params
