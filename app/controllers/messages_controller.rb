@@ -10,7 +10,8 @@ class MessagesController < ApplicationController
   
   def outbound
     Message.outbound(message_params[:to])
-    render :index
+    flash[:notice] = "Sent"
+    redirect_to messages_path
   end
   
   def inbound
