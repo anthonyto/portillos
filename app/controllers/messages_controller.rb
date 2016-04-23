@@ -1,15 +1,17 @@
 class MessagesController < ApplicationController
-  before_action :parse_message_params, only: :receive_message
+  before_action :parse_message_params, only: :receive
   
   def index
     @messages = Message.all
   end
   
-  def send_message
-    
+  def new
   end
   
-  def receive_message
+  def outbound
+  end
+  
+  def inbound
     @message = Message.create(from: params[:from], body: params[:body])
   end
   
