@@ -1,4 +1,8 @@
+<%= image_tag "food.jpg", id: "food" %>
+<%= image_tag "logo.jpeg", id: "logo" %>
+<%= image_tag "hotdog.jpeg", id: "hotdog" %>
+
 <% sizes = [1,2,3] %>
 <% @messages.each do |message| %>
-  <h<%= sizes.sample %>><%= message.body %></h<%= sizes.sample %>>
+  <h<%= sizes.sample %>><%= "#{Phone_numbers[message.from_number]}: #{message.body}" %></h<%= sizes.sample %>>
 <% end %>

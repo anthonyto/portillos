@@ -8,7 +8,6 @@ class Message < ActiveRecord::Base
       TwilioClient.client.account.messages.create({
         to: to,
         from: '+18582390241',
-        body: 'testing',
         media_url: portillos_image
       })
       Message.create(from_number: '+18582390241', to_number: to, body: 'testing', media_url: 'portillos_image')
