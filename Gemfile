@@ -1,11 +1,12 @@
 source 'https://rubygems.org'
 
 gem 'rails', '4.2.6'
-# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 gem 'mysql2', '0.3.20'
 gem 'twilio-ruby'
 gem 'figaro'
+gem 'sass-rails', '~> 5.0'
+gem 'uglifier', '>= 1.3.0'
 
 group :development, :test do
   gem 'pry'
