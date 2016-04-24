@@ -9,5 +9,5 @@ Rails.application.routes.draw do
   
   get '/info', to: 'application#info', as: 'info'
     
-  root to: 'messages#index'
+  root to: 'application#info'
 end
