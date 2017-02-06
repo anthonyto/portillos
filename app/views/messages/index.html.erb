@@ -4,5 +4,6 @@
 
 <% sizes = [1,2,3] %>
 <% @messages.each do |message| %>
-  <h<%= sizes.sample %>><%= "#{Phone_numbers[message.from_number]}: #{message.body}" %></h<%= sizes.sample %>>
+  <%= sender = Phone_numbers[message.from_number] || "Unknown" %>
+  <h<%= sizes.sample %>><%= "#{sender}: #{message.body}" %></h<%= sizes.sample %>>
 <% end %>
