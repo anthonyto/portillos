@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 ruby "2.5.7"
 
-gem 'rails', '4.2.6'
+gem 'rails', '4.2.10'
 gem 'turbolinks'
 gem 'mysql2'
 gem 'twilio-ruby'
